@@ -50,12 +50,12 @@ const Login = () => {
   return (
     <div className="my-5 py-5">
       <div className="w-50 mx-auto border p-5">
-        <h4 className="fw-3 text-center">Login</h4>
+        <h1 className="py-4 text-center">Please Login Here</h1>
 
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
             <Form.Control
+            style={{padding:'17px'}}
               type="email"
               placeholder="Enter email"
               {...register("email", { required: true })}
@@ -66,8 +66,8 @@ const Login = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
             <Form.Control
+            style={{padding:'17px'}}
               type="password"
               placeholder="Password"
               {...register("password", { required: true })}
@@ -76,14 +76,15 @@ const Login = () => {
               <span className="text-danger">This field is required</span>
             )}
           </Form.Group>
-          <p>
+          <p className="py-3">
             Don't Have A Account?<Link to="/register">Register Now</Link>
           </p>
-          <Button variant="dark" className="w-100" type="submit">
+          <Button style={{padding:'17px'}} variant="info" className="w-100" type="submit">
             Login
           </Button>
           <Button
-            variant="danger"
+          style={{padding:'17px'}}
+            variant="info"
             className="w-100 my-3"
             onClick={googlehandeler}
           >

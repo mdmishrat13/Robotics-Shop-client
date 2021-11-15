@@ -5,7 +5,7 @@ import { Table, Button } from "react-bootstrap";
 const AllOrder = () => {
   const [DisplayOrder, setDisplayOrder] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/allorder`)
+    fetch(`https://limitless-stream-26427.herokuapp.com/allorder`)
       .then((res) => res.json())
       .then((data) => {
         setDisplayOrder(data);
@@ -22,7 +22,7 @@ const AllOrder = () => {
 
   const handelStatus = (id) => {
     const user = { id };
-    fetch(`http://localhost:5000/order/status/`, {
+    fetch(`https://limitless-stream-26427.herokuapp.com/order/status/`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,7 @@ const AllOrder = () => {
     const confirmation = window.confirm("Are you sure to delete??");
     if (confirmation) {
       deleteHandelerFromUi(id);
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://limitless-stream-26427.herokuapp.com/order/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json)

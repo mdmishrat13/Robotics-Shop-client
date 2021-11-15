@@ -6,7 +6,7 @@ const MakeAdmin = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     const user = { email };
-    fetch("http://localhost:5000/user/admin", {
+    fetch("https://limitless-stream-26427.herokuapp.com/user/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -28,13 +28,14 @@ const MakeAdmin = () => {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
+              style={{padding:'17px'}}
               placeholder="Enter email"
               onBlur={(e) => setEmail(e.target.value)}
               required
             />
           </Form.Group>
 
-          <Button variant="primary" className="w-100" type="submit">
+          <Button style={{padding:'15px'}} variant="primary" className="w-100" type="submit">
             Make Admin
           </Button>
         </Form>

@@ -16,7 +16,7 @@ const AddProduct = () => {
       describtion: describtion.current.value,
     };
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://limitless-stream-26427.herokuapp.com/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

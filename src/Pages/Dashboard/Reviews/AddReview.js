@@ -18,7 +18,7 @@ const Review = () => {
       userName: user.displayName,
       userImg: imageUrl,
     };
-    fetch("http://localhost:5000/comment", {
+    fetch("https://limitless-stream-26427.herokuapp.com/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -9,7 +9,7 @@ const Purchase = () => {
   const [getParches, setGetParches] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/purchase/${id}`)
+    fetch(`https://limitless-stream-26427.herokuapp.com/purchase/${id}`)
       .then((res) => res.json())
       .then((data) => setGetParches(data))
       .catch(() => {
@@ -26,7 +26,7 @@ const Purchase = () => {
       image: getParches.image,
       status: 1,
     };
-    fetch("http://localhost:5000/purchase", {
+    fetch("https://limitless-stream-26427.herokuapp.com/purchase", {
       method: "POST",
       headers: {
         "content-type": "application/json",

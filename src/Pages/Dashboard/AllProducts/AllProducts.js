@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Table, Button, Spinner } from "react-bootstrap";
+import { Table, Button} from "react-bootstrap";
+import ReactLoading from 'react-loading';
 
 const AllProducts = () => {
   const [getAllProducts, setGetAllProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://limitless-stream-26427.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setGetAllProducts(data));
   }, []);
@@ -17,7 +18,7 @@ const AllProducts = () => {
     const confirmation = window.confirm("Are you sure to delete??");
     if (confirmation) {
       deleteHandelerFromUi(id);
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`https://limitless-stream-26427.herokuapp.com/product/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json)
@@ -54,7 +55,7 @@ const AllProducts = () => {
           ))
         ) : (
           <div className="my-4">
-            <Spinner animation="border" />
+            <ReactLoading type="balls" color="green" height={667} width={375} />
           </div>
         )}
       </tbody>
